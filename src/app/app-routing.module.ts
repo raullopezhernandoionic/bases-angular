@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 
 //Necesario importar los componentes a este archivo para que sean visibles por "routes"
@@ -23,6 +22,17 @@ const routes : Routes = [
   {
     path : 'contact',
     component: ContactComponent
+  },
+
+  {
+
+    //Si utilizamos "loadChildren" estamos haciendo uso de carga "LazyLoad"
+    path : 'posts',
+    //Forma Antigua (Funciona pero mas propensa a errores)
+    //loadChildren: './pages/posts/posts.module#PostsModule'
+
+    //Forma Nueva(Funciona, la mas recomendada)
+    loadChildren: () =>import ('./pages/posts/posts.module').then( m => m.PostsModule)
   },
 
   {
