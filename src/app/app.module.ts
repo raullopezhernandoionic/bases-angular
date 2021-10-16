@@ -5,6 +5,9 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { MenuComponent } from './components/menu/menu.component';
 
+//Este modulo tiene todo lo necesario para hacer las peticiones Http
+import {HttpClientModule} from '@angular/common/http'
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,7 +20,8 @@ import { MenuComponent } from './components/menu/menu.component';
     BrowserModule,
     PagesModule,
     //Para que Angula se de cuenta del "AppRoutingModule" hay que importarlo
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
