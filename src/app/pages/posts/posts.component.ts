@@ -18,4 +18,8 @@ export class PostsComponent implements OnInit {
 
   }
 
+  escuchaClick(id:number){
+    console.log('Click en' , id);
+  }
+
 }
